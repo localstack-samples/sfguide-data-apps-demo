@@ -3,7 +3,9 @@ const Trip = require('./../../models/trip.js');
 module.exports = {
   getTripsByMonth: (req, res, next) => {
     // retrieve & send data for trips by month
+//    console.log("!getTripsByMonth", Trip.countByMonth);
     Trip.countByMonth(req.start_range, req.end_range, (err, data) => {
+//      console.log("!getTripsByMonth2", err, data);
       if (err) {
         next(err);
       } else {

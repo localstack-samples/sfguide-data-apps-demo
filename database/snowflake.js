@@ -8,7 +8,7 @@ const factory = {
       return new Promise((resolve, reject) => {
           // Create Connection
           const connection = snowflake.createConnection({
-            timeout: 15 * 1000,
+            timeout: 30 * 1000,
             account: config.snowflake_account,
             username: config.snowflake_user,
             authenticator: 'SNOWFLAKE_JWT',
@@ -21,6 +21,8 @@ const factory = {
             }),
             database: config.snowflake_database,
             warehouse: config.snowflake_warehouse,
+            accessUrl: config.snowflake_url,
+            host: config.snowflake_host,
             clientSessionKeepAlive: true
           });
           // Try to connect to Snowflake, and check whether the connection was successful.

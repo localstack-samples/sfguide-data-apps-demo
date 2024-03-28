@@ -7,7 +7,7 @@ const {PORT = 3000} = process.env
 
 // create express app, set up json parsing and logging
 const app = express();
-app.use(timeout('15s'));
+app.use(timeout('60s'));
 app.use(express.json());
 app.use(morgan('dev'))
 
